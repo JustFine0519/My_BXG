@@ -24,14 +24,45 @@
 // }
 
 
-define(["jquery","template"],function ($,template) {
+define(["jquery","template","utils"],function ($,template,utils) {
   //判断当前是编辑功能还是添加功能
-  var isEdit=false;
+  var tc_id=utils.getQueryObj().id;
   
-  if(isEdit){
+  if(tc_id){
     //编辑功能
-    
-    
+    //1.获取当前要编辑的讲师的详细信息
+    $.ajax({
+      url:"/api/teacher/edit",
+      data:{
+        tc_id:tc_id
+      },
+      success:function (data) {
+        if(data.code==200){
+          // console.log(data);
+          data.result.title="编辑讲师";
+          data.result.btntext="保 存";
+          var html=template("teacher_add_edit_tmp",data.result);
+          $(".body,.teacher").html(html);
+          $("#save-btn").click(function () {
+            //2.获取用户输入的内容
+            //3.将这些内容通过ajax请求发送给后台进行保存
+            $.ajax({
+              url:"/api/teacher/update",
+              type:"post",
+              data:$("form").serialize(),
+              success:function (data) {
+                console.log(data);
+                if(data.code==200){
+                  location.href="/teacher/list"
+                }
+              }
+            })
+            //4.保存成功之后返回列表页
+            return false;
+          })
+        }
+      }
+    })
     
   }else{
     //添加功能
@@ -39,7 +70,7 @@ define(["jquery","template"],function ($,template) {
     //设置数据，将模板渲染到页面上去
     var obj={
       title:"添加讲师",
-      btntext:"添加"
+      btntext:"添 加"
     }
     var html=template("teacher_add_edit_tmp",obj);
     //并集选择器

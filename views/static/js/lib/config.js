@@ -10,6 +10,7 @@ require.config({
     cookie: "./jquery-cookie/jquery.cookie",
     template: "./artTemplate/template",
     bootstrap:"./bootstrap/js/bootstrap",
+    utils:"../static/js/lib/utils"
   },
   shim:{
     bootstrap:{

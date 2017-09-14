@@ -77,7 +77,7 @@
         <td>{{value.tc_cellphone}}</td>
         <td data-id={{value.tc_id}}>
           <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs check-info">查 看</a>
-          <a href="" class="btn btn-info btn-xs">编 辑</a>
+          <a href="/teacher/add?id={{value.tc_id}}" class="btn btn-info btn-xs">编 辑</a>
           <a href="javascript:;" data-status="{{value.tc_status}}" class="btn {{value.tc_status== '0' ? 'btn-warning':'btn-success'}} btn-xs btn-status">{{value.tc_status == "0" ? "注 销":"启 用"}}</a>
         </td>
       </tr>

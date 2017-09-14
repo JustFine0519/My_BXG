@@ -27,18 +27,21 @@
   </ol>
   <div class="teacher-add">
     <form action="" class="form-horizontal col-xs-offset-2">
+      <input type="hidden" name="tc_id" value="{{tc_id}}">
       <div class="form-group">
         <label for="" class="col-xs-3 control-label">姓名</label>
         <div class="col-xs-4">
           <input type="text" class="form-control input-sm" placeholder="讲师名称" value="{{tc_name}}" name="tc_name">
         </div>
       </div>
+      {{if !tc_id}}
       <div class="form-group">
         <label for="" class="col-xs-3 control-label">密码</label>
         <div class="col-xs-4">
           <input type="password" value="{{tc_pass}}" class="form-control input-sm" name="tc_pass">
         </div>
       </div>
+      {{/if}}
       <div class="form-group">
         <label for="" class="col-xs-3 control-label">入职时间</label>
         <div class="col-xs-4">
