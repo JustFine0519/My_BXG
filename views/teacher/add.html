@@ -32,15 +32,17 @@
       <div class="form-group">
         <label for="" class="col-xs-3 control-label">姓名</label>
         <div class="col-xs-4">
-          <input type="text" class="form-control input-sm" placeholder="讲师名称" value="{{tc_name}}" name="tc_name">
+          <input type="text" name="tc_name" value="{{tc_name}}" class="form-control input-sm" data-required data-trim placeholder="讲师名称" data-description="name" data-describedby="msgforname">
         </div>
+        <span id="msgforname" class="col-xs-5 help-block"></span>
       </div>
       {{if !tc_id}}
       <div class="form-group">
         <label for="" class="col-xs-3 control-label">密码</label>
         <div class="col-xs-4">
-          <input type="password" value="{{tc_pass}}" class="form-control input-sm" name="tc_pass">
+          <input type="password" name="tc_pass" data-required data-pattern="^[a-zA-Z0-9]{6,15}$" class="form-control input-sm" data-description="password" data-describedby="msgforpass">
         </div>
+        <span id="msgforpass" class="col-xs-5 help-block"></span>
       </div>
       {{/if}}
       <div class="form-group">
@@ -48,6 +50,7 @@
         <div class="col-xs-4">
           <input type="text" name="tc_join_date" value="{{tc_join_date}}" data-required class="form-control input-sm" data-description="date" data-describedby="msgfordate">
         </div>
+        <span id="msgfordate" class="col-xs-5 help-block"></span>
       </div>
       <div class="form-group">
         <label for="" class="col-xs-3 control-label">类型</label>
