@@ -47,20 +47,8 @@
                                 <th>操作</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>赵玉川</td>
-                                <td>布头儿</td>
-                                <td>28</td>
-                                <td>男</td>
-                                <td>15901256171</td>
-                                <td>
-                                    <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
-                                    <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
-                                    <a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
-                                </td>
-                            </tr>
+                        <tbody  id="teacher_list">
+                           <!--讲师列表信息-->
                         </tbody>
                     </table>
                 </div>
@@ -120,5 +108,28 @@
     </div>
 
     <?php include "/views/public/js.html" ?>
+
+    <!--讲师列表模板-->
+    <script type="text/template" id="teacher_list_tmp">
+      {{each result as value i}}
+      <tr>
+        <td>{{i+1}}</td>
+        <td>{{value.tc_name}}</td>
+        <td>{{value.tc_roster}}</td>
+        <td>{{value.tc_birthday}}</td>
+        <td>{{value.tc_gender=="0"?"男":"女"}}</td>
+        <td>{{value.tc_cellphone}}</td>
+        <td>
+          <a href="" data-toggle="modal" class="btn btn-info btn-xs check-info">查 看</a>
+          <a href="" class="btn btn-info btn-xs">编 辑</a>
+          <a href="javascript:;"  class="btn {{value.tc_status== '0' ? 'btn-warning':'btn-success'}} btn-xs btn-status">{{value.tc_status == "0" ? "注 销":"启 用"}}</a>
+        </td>
+      </tr>
+      {{/each}}
+    </script>
 </body>
+<script>
+  require(["../static/js/teacher/list"])
+</script>
+
 </html>
