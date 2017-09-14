@@ -11,7 +11,8 @@ require.config({
     template: "./artTemplate/template",
     bootstrap:"./bootstrap/js/bootstrap",
     utils:"../static/js/lib/utils",
-    form:"./jquery-form/jquery.form"
+    form:"./jquery-form/jquery.form",
+    nprogress:"./nprogress/nprogress"
   },
   shim:{
     bootstrap:{

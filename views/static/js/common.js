@@ -1,7 +1,9 @@
-define(["jquery", "template", "cookie"], function($, template){
+define(["jquery", "template", "nprogress","cookie"], function($, template,nprogress){
+  nprogress.start();
   
   //登录功能
   $(function(){
+    nprogress.done();
     //判断用户是否登录了，如果没有登录，就给他跳回到登录页
     //判断用户是否登录的依据，最好是通过向后台发送请求，问后台用户是否登录，这才是最严谨的判断登录的方式，当前项目中没有提供接口，所以不能这么做
     
@@ -38,7 +40,9 @@ define(["jquery", "template", "cookie"], function($, template){
       })
     });
   
-  
+
+    
+    
     //导航栏上实现效果
     $("#course-manage").click(function () {
       $(this).children("ul").stop(200).slideToggle();
@@ -52,5 +56,15 @@ define(["jquery", "template", "cookie"], function($, template){
         $(ele).addClass("active");
       }
     })
+  
+    //注册ajax全局事件
+    $(document).ajaxStart(function () {
+      nprogress.start();
+    })
+  
+    $(document).ajaxStop(function () {
+      nprogress.done();
+    })
   })
+
 })

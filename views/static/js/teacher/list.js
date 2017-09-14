@@ -13,7 +13,9 @@ define(["jquery","template","bootstrap"],function ($,template) {
         // 将获取到的讲师列表数据，展示到页面中
         var html=template("teacher_list_tmp",data);
         $("#teacher_list").html(html);
+        
       }
+      
     })
   
     

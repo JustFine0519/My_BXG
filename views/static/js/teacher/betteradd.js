@@ -32,6 +32,8 @@ define (["jquery","template","utils","form"],function ($,template,utils) {
     $(".body,.teacher").html(html);
   }
   
+  
+  
   //给保存按钮注册点击事件
   $(".body,.teacher").on("submit","form",function () {
     $(this).ajaxSubmit({
