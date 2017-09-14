@@ -26,7 +26,7 @@
     <li class="active">{{title}}</li>
   </ol>
   <div class="teacher-add">
-    <form action="" class="form-horizontal col-xs-offset-2">
+    <form  action="{{url}}" method="post" class="form-horizontal col-xs-offset-2">
       <input type="hidden" name="tc_id" value="{{tc_id}}">
       <div class="form-group">
         <label for="" class="col-xs-3 control-label">姓名</label>
@@ -72,7 +72,7 @@
       </div>
       <div class="form-group">
         <div class="col-xs-7">
-          <button class="btn btn-success btn-sm pull-right" id="save-btn">{{btntext}}</button>
+          <button class="btn btn-success btn-sm pull-right" id="save-btn">{{btnText}}</button>
         </div>
       </div>
     </form>
@@ -81,6 +81,6 @@
 <?php include "/views/public/js.html" ?>
 </body>
 <script>
-  require(["../static/js/teacher/add"])
+  require(["../static/js/teacher/betteradd"])
 </script>
 </html>

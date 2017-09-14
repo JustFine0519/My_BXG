@@ -40,7 +40,7 @@ define(["jquery","template","utils"],function ($,template,utils) {
         if(data.code==200){
           // console.log(data);
           data.result.title="编辑讲师";
-          data.result.btntext="保 存";
+          data.result.btnText="保 存";
           var html=template("teacher_add_edit_tmp",data.result);
           $(".body,.teacher").html(html);
           $("#save-btn").click(function () {
@@ -70,7 +70,7 @@ define(["jquery","template","utils"],function ($,template,utils) {
     //设置数据，将模板渲染到页面上去
     var obj={
       title:"添加讲师",
-      btntext:"添 加"
+      btnText:"添 加"
     }
     var html=template("teacher_add_edit_tmp",obj);
     //并集选择器
