@@ -21,5 +21,21 @@ define(["jquery", "template", "cookie"], function($, template){
       var html = template("profile_tmp", userinfo);
       $("#profile").html(html);
     }
+  
+    //退出功能的实现
+    $("#logout-btn").click(function () {
+      //1.向后台发送ajax请求
+      $.ajax({
+        url:"/api/logout",
+        type:"post",
+        success:function (data) {
+          console.log(data);
+          if(data.code==200){
+            //2.接收到请求响应数据后，如果成功，则调回登录页面
+            location.href="/dashboard/login";
+          }
+        }
+      })
+    });
   });
 })
