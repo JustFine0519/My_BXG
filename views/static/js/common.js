@@ -37,5 +37,20 @@ define(["jquery", "template", "cookie"], function($, template){
         }
       })
     });
-  });
+  
+  
+    //导航栏上实现效果
+    $("#course-manage").click(function () {
+      $(this).children("ul").stop(200).slideToggle();
+    })
+  
+    //让当前点击的导航栏高亮
+    $(".navs a").each(function (index,ele) {
+      // console.log($(ele).attr("href"));
+      if($(ele).attr("href")==location.pathname){
+        // console.log(ele.href);
+        $(ele).addClass("active");
+      }
+    })
+  })
 })
