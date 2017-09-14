@@ -1,7 +1,7 @@
 /**
  * Created by hewan on 2017-09-14.
  */
-define (["jquery","template","utils","form"],function ($,template,utils) {
+  define (["jquery","template","utils","form", "datepicker", "datepickerCN"],function ($,template,utils) {
   var tc_id=utils.getQueryObj().id;
   if(tc_id){
     $.ajax({
@@ -30,6 +30,13 @@ define (["jquery","template","utils","form"],function ($,template,utils) {
   function renderData(data) {
     var html = template("teacher_add_edit_tmp", data);
     $(".body,.teacher").html(html);
+    
+    //使用日期选择插件
+    $("input[name=tc_join_date]").datepicker({
+      format: "yyyy-mm-dd",
+      autoclose: true,
+      language: "zh-CN"
+    });
   }
   
   
