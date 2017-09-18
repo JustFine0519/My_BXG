@@ -37,7 +37,7 @@ define(["jquery","cookie"],function ($) {
             
             //跳转到首页
             location.href="/dashboard/index";
-            console.log(data);
+            //console.log(data);
           }
         }
       });
@@ -46,5 +46,11 @@ define(["jquery","cookie"],function ($) {
       //e.preventDefault();
       return false;
     })
+    //头像的展示
+    var userinfo=$.cookie("userinfo");
+    if(userinfo){
+      userinfo=JSON.parse(userinfo);
+      $(".avatar>img").attr("src",userinfo.tc_avatar);
+    }
   })
 })

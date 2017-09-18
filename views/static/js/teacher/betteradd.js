@@ -1,7 +1,7 @@
 /**
  * Created by hewan on 2017-09-14.
  */
-  define (["jquery","template","utils","form", "datepicker", "datepickerCN","validate"],function ($,template,utils) {
+define (["jquery","template","utils","form", "datepicker", "datepickerCN","validate"],function ($,template,utils) {
   var tc_id=utils.getQueryObj().id;
   if(tc_id){
     $.ajax({
