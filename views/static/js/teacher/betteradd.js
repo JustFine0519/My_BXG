@@ -53,7 +53,7 @@
       },
       description:{
         // data-required      设置当前表单项为必填
-        // data-trim           设置在表单校验的时候去掉两端的空格
+        // data-trim          设置在表单校验的时候去掉两端的空格
         // data-pattern       设置在表单校验的时候，表单值必须满足的正则表达式
         // data-conditional   设置条件验证的条件（函数）    函数在配置对象中的conditional对象中查找
         // data-description   设置当前表单项各种验证状态的提示信息， 在配置对象中的description对象中找

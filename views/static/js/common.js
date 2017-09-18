@@ -1,7 +1,6 @@
 define(["jquery", "template", "nprogress","cookie"], function($, template,nprogress){
   nprogress.start();
   
-  //登录功能
   $(function(){
     nprogress.done();
     //判断用户是否登录了，如果没有登录，就给他跳回到登录页
